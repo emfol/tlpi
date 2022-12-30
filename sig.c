@@ -4,7 +4,7 @@
 #include <signal.h>
 
 #define DEFAULT_ALARM_PERIOD 5
-#define SIGNAL_LIST_ENTRY(signame) { signame, 0, #signame }
+#define SIGNAL_LIST_ENTRY(signame) { (signame), 0, #signame }
 
 struct signal_list_entry {
 	int num;
@@ -107,7 +107,7 @@ int main(int argc, char **argv)
 			fprintf(stderr, " - Alarm canceled %d seconds before due...\n", timeout);
 		}
 		pause();
-		signum = (int) last_received_signal;
+		signum = (int)last_received_signal;
 		last_received_signal = 0;
 		entry = find_signal_list_entry(signal_list, count, signum);
 		if (entry != NULL) {
