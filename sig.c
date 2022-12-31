@@ -58,6 +58,7 @@ int main(int argc, char **argv)
 		SIGNAL_LIST_ENTRY(SIGTERM)
 	};
 
+	setbuf(stderr, NULL);
 	fprintf(
 		stderr,
 		"Starting...\n"
