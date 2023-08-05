@@ -30,7 +30,7 @@ int main(int argc, char **argv)
     if (index < 0) {
       fprintf(
         stderr,
-        "The sequence index should be an integer greater than or equal to zero... (Given: %hd)\n",
+        "The sequence index should be an integer greater than or equal to zero... (Given: %d)\n",
         index
       );
       status = 1;
@@ -41,7 +41,7 @@ int main(int argc, char **argv)
   result = fib(index);
 
   /* Output result. */
-  fprintf(stderr, "fib(%hd) = ", index);
+  fprintf(stderr, "fib(%d) = ", index);
   fprintf(stdout, "%ld\n", result);
 
   return status;
